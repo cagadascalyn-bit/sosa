@@ -21,7 +21,8 @@ CREATE TABLE `users` (
   `address`         VARCHAR(255)    DEFAULT NULL,
   `gender`          VARCHAR(20)     DEFAULT NULL,
   `phone`           VARCHAR(20)     DEFAULT NULL,
-  `profile_picture` VARCHAR(255)    DEFAULT NULL,
+  `profile_picture`        VARCHAR(255)    DEFAULT NULL,
+  `profile_picture_base64`  LONGTEXT        DEFAULT NULL,
   `role`            VARCHAR(20)     NOT NULL DEFAULT 'user',
   `remember_token`  VARCHAR(100)    DEFAULT NULL,
   `created_at`      TIMESTAMP       NULL DEFAULT NULL,
@@ -73,7 +74,8 @@ CREATE TABLE `migrations` (
 
 INSERT INTO `migrations` (`migration`, `batch`) VALUES
 ('0001_01_01_000000_create_users_table', 1),
-('2024_01_01_000003_create_recipes_table', 1);
+('2024_01_01_000003_create_recipes_table', 1),
+('2024_01_01_000004_add_profile_picture_base64_to_users_table', 1);
 
 -- ============================================================
 -- Sample Data: Users

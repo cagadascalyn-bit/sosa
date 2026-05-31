@@ -15,8 +15,8 @@
             {{-- Avatar --}}
             <div class="px-4 pb-4">
                 <div style="margin-top:-36px;margin-bottom:12px">
-                    @if($user->profile_picture)
-                        <img src="{{ asset('storage/'.$user->profile_picture) }}"
+                    @if($user->avatar)
+                        <img src="{{ $user->avatar }}"
                              style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 4px 16px rgba(0,0,0,.12)">
                     @else
                         <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#ff6b35,#ff9a3c);color:#fff;font-weight:800;font-size:1.6rem;display:flex;align-items:center;justify-content:center;border:4px solid #fff;box-shadow:0 4px 16px rgba(255,107,53,.3)">
@@ -104,19 +104,21 @@
                                value="{{ old('address', $user->address) }}" placeholder="Street, City, Province">
                     </div>
 
-                    {{-- Profile Picture --}}
                     <div class="col-12">
                         <label class="form-label">Profile Picture</label>
                         <div class="d-flex align-items-center gap-3">
-                            @if($user->profile_picture)
-                                <img src="{{ asset('storage/'.$user->profile_picture) }}"
+                            @if($user->avatar)
+                                <img src="{{ $user->avatar }}"
                                      style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #f0ebe5">
                             @else
                                 <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#ff6b35,#ff9a3c);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center">
                                     {{ strtoupper(substr($user->name,0,1)) }}
                                 </div>
                             @endif
-                            <input type="file" name="picture" class="form-control" accept="image/*" style="flex:1">
+                            <input type="file" name="picture" class="form-control" accept="image/jpeg,image/jpg,image/png" style="flex:1">
+                        </div>
+                        <div style="font-size:.75rem;color:#aaa;margin-top:5px">
+                            <i class="bi bi-info-circle me-1"></i>JPEG or PNG, max 2MB. Stored securely in the database.
                         </div>
                     </div>
 

@@ -33,8 +33,8 @@
                         <td style="color:#bbb;font-size:.8rem">{{ str_pad($i+1, 2, '0', STR_PAD_LEFT) }}</td>
                         <td>
                             <div class="d-flex align-items-center gap-3">
-                                @if($user->profile_picture)
-                                    <img src="{{ asset('storage/'.$user->profile_picture) }}"
+                                @if($user->avatar)
+                                    <img src="{{ $user->avatar }}"
                                          style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid #f0ebe5">
                                 @else
                                     <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#ff6b35,#ff9a3c);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">

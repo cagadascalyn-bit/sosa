@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->string('phone')->nullable();
             $table->string('profile_picture')->nullable();
+            $table->longText('profile_picture_base64')->nullable();
             $table->string('role')->default('user');
             $table->rememberToken();
             $table->timestamps();

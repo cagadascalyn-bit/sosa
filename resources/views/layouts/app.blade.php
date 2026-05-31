@@ -267,8 +267,8 @@
         </button>
         <div class="page-title">@yield('page-title', 'Dashboard')</div>
         <div class="user-pill">
-            @if(auth()->user()->profile_picture)
-                <img src="{{ asset('storage/' . auth()->user()->profile_picture) }}" class="avatar">
+            @if(auth()->user()->avatar)
+                <img src="{{ auth()->user()->avatar }}" class="avatar">
             @else
                 <div class="avatar-initials">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
             @endif
